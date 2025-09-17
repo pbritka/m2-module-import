@@ -1,0 +1,68 @@
+{
+    "jh_import_lock": {
+        "column": {
+            "import_name": true
+        }
+    },
+    "jh_import_history": {
+        "column": {
+            "id": true,
+            "source_id": true,
+            "started": true,
+            "finished": true,
+            "import_name": true,
+            "memory_usage": true
+        },
+        "index": {
+            "JH_IMPORT_HISTORY_IMPORT_NAME": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    },
+    "jh_import_history_log": {
+        "column": {
+            "id": true,
+            "history_id": true,
+            "message": true,
+            "log_level": true,
+            "created": true
+        },
+        "constraint": {
+            "PRIMARY": true,
+            "JH_IMPORT_HISTORY_LOG_HISTORY_ID_JH_IMPORT_HISTORY_ID": true
+        }
+    },
+    "jh_import_history_item_log": {
+        "column": {
+            "id": true,
+            "history_id": true,
+            "reference_line": true,
+            "id_field": true,
+            "id_value": true,
+            "created": true,
+            "message": true,
+            "log_level": true
+        },
+        "index": {
+            "JH_IMPORT_HISTORY_ITEM_LOG_ID_VALUE": true
+        },
+        "constraint": {
+            "PRIMARY": true,
+            "JH_IMPORT_HISTORY_ITEM_LOG_HISTORY_ID_JH_IMPORT_HISTORY_ID": true
+        }
+    },
+    "jh_import_archive_csv": {
+        "column": {
+            "id": true,
+            "source_id": true,
+            "file_location": true,
+            "deleted": true,
+            "archived": true,
+            "archive_location": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}
