@@ -52,7 +52,7 @@ class Record
         $this->data = $data;
     }
 
-    public function getColumnValue(string $columnName, $default = null, string $dataType = null)
+    public function getColumnValue(string $columnName, $default = null, ?string $dataType = null)
     {
         $value = $this->data[$columnName] ?? $default;
 
@@ -70,7 +70,7 @@ class Record
         return $value;
     }
 
-    public function getColumnValueAndUnset(string $columnName, $default = null, string $dataType = null)
+    public function getColumnValueAndUnset(string $columnName, $default = null, ?string $dataType = null)
     {
         $value = $this->getColumnValue($columnName, $default, $dataType);
         $this->unset($columnName);
@@ -98,7 +98,7 @@ class Record
         $this->unset($columnFrom);
     }
 
-    public function moveColumnToArray(string $columnFrom, string $columnTo, string $key = null): void
+    public function moveColumnToArray(string $columnFrom, string $columnTo, ?string $key = null): void
     {
         if (null === $key) {
             $key = $columnFrom;
