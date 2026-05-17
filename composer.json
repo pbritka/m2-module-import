@@ -2,6 +2,7 @@
     "name": "pbritka/m2-module-import",
     "description": "Import module for Magento 2 - provides commands, utilities and abstractions for building imports for Magento 2 projects. Forked from WeareJH/Import.",
     "type": "magento2-module",
+    "license": "MIT",
     "require": {
         "php": ">=7.4",
         "ext-json": "*",
